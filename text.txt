@@ -1,5 +1,3 @@
 This is some dummy text. There is a GitHub Action that enforces that this text always contains at least one occurrence of an uppercase "hello". Here it is:
 
-HELLO
-
 Adding more content
