@@ -1,0 +1,22 @@
+name: Create a Commit
+
+on: workflow_dispatch
+
+
+jobs:
+  commit_maker:
+    name: Create a Commit
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Create an empty commit
+      run: |
+        git config --global user.name "Eve"
+        git config --global user.email 'eve@example.com'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git commit --allow-empty -am "An Empty Commit"
+        git push

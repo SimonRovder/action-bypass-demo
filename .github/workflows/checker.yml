@@ -1,0 +1,20 @@
+name: Ensure Hello
+
+on:
+  pull_request:
+    branches:
+    - master
+
+
+jobs:
+  ensure_hello:
+    name: Ensure that there is a HELLO
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Check for the HELLO
+      run: grep "HELLO" text.txt
